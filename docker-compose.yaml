@@ -21,6 +21,7 @@ services:
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - ./nginx/certs:/etc/nginx/certs
       - ./nginx/html:/usr/share/nginx/html
+      - ./custom-nginx.conf:/etc/nginx/conf.d/custom-nginx.conf
 
   acme:
     image: nginxproxy/acme-companion:latest
@@ -56,4 +57,4 @@ services:
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
     volumes:
       - ./wordpress:/var/www/html
-      - ./custom.ini:/usr/local/etc/php/conf.d/custom.ini
+      - ./custom-php.ini:/usr/local/etc/php/conf.d/custom-php.ini
