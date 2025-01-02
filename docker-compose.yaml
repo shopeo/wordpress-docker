@@ -56,3 +56,4 @@ services:
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
     volumes:
       - ./wordpress:/var/www/html
+      - ./custom.ini:"$PHP_INI_DIR/conf.d/custom.ini"
